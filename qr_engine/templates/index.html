@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<div class="row justify-content-center" style="margin-top: 200px;">
+
+   <div class="col-md-6">
+
+       <form id="frm_input" >
+        {% csrf_token %}
+           <div class="col text-center">
+               <label for="">Text / URL : </label>
+
+           </div>
+           <div class="input-group">
+               <input type="text" class="form-control" name="inputan" id="inputan" required>
+               <button type="submit" class="btn btn-success" id="btn_gen">Generate</button>
+           </div>
+       </form>
+   </div>
+     
+</div>
+<script type = "text/javascript">
+    function get_img(linkelement) {
+        var myDiv = document.getElementById('img_container');
+       
+        var myImg = myDiv.children[0];
+        linkelement.href = myImg.src;
+    }
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="title">Title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+             <div class="row justify-content-center" id="img_container"></div>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col align-self-start" id="download"></div>
+             <div class="col align-self-end">
+
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             </div>
+             
+            
+             
+                
+               
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+{% endblock %}
+{% block script_content %}
+<script src="{% static 'script4.js' %}"></script>
+{% endblock %}
