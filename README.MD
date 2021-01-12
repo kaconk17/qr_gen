@@ -1,1 +1,1 @@
-Web aplication QR generator
+django based Web aplication QR generator
