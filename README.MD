@@ -1,0 +1,1 @@
+Web aplication QR generator
