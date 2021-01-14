@@ -17,7 +17,7 @@ $(document).ready(function(){
         .done(function(resp) {
             
           if (resp.success) {
-            $("#img_container").html("<img src='data:image/png;base64,"+resp.img+"' class='img-fluid'>");
+            $("#img_container").html("<img src='data:image/png;base64,"+resp.img+"' class='img-fluid img-thumbnail'>");
             $("#title").text(title);
             $("#download").html("<a class='btn btn-primary' href='#' onclick='get_img(this)' download='"+ title+".png'>Download</a>")
             $('#mymodal').modal('show');
@@ -29,7 +29,7 @@ $(document).ready(function(){
              //toastr['warning']('Tidak dapat terhubung ke server !!!');
         })
         .always(function() {
-           
+            btn.attr('disabled', false);
         });
     });
 
