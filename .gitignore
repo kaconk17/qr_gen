@@ -115,3 +115,7 @@ media/
 # **/migrations/**
 # !**/migrations
 # !**/migrations/__init__.py
+# OS X
+.DS_Store*
+Icon?
+._*
