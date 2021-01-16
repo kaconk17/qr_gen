@@ -25,5 +25,5 @@ RUN chmod -R 755 /staticfiles
 RUN chown -R user:user /media
 RUN chmod -R 755 /media
 USER user
-
-CMD ["entrypoint.sh"]
+ENTRYPOINT [ "sh","/scripts/entrypoint.sh" ]
+#CMD ["entrypoint.sh"]
