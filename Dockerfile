@@ -20,9 +20,9 @@ RUN mkdir -p /staticfiles
 
 RUN adduser -D user
 RUN chown -R user:user /staticfiles
-RUN shmod -R 755 /staticfiles
+RUN chmod -R 755 /staticfiles
 RUN chown -R user:user /media
-RUN shmod -R 755 /media
+RUN chmod -R 755 /media
 USER user
 
 CMD ["entrypoint.sh"]
