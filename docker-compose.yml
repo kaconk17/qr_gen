@@ -13,7 +13,7 @@ services:
   nginx:
     build: ./nginx
     volumes: 
-      - static:/vol/static
+      - static:/staticfiles
     ports: 
       - "8080:8080"
     depends_on: 
