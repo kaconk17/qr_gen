@@ -15,12 +15,14 @@ COPY ./scripts /scripts
 
 RUN shmod +x /scripts/*
 
-RUN mkdir -p /vol/web/media
-RUN mkdir -p /vol/web/static
+RUN mkdir -p /media
+RUN mkdir -p /staticfiles
 
 RUN adduser -D user
-RUN chown -R user:user /vol
-RUN shmod -R 755 /vol/web
+RUN chown -R user:user /staticfiles
+RUN shmod -R 755 /staticfiles
+RUN chown -R user:user /media
+RUN shmod -R 755 /media
 USER user
 
 CMD ["entrypoint.sh"]

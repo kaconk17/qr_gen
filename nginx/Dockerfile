@@ -1,4 +1,10 @@
-FROM nginx:1..19.0-alpine
+FROM nginxinc/nginx-unprivileged:1-alpine
 
-RUN rm /etc/nginx/conf.d/deafult.conf
-COPY nginx.conf /etc/nginx/conf.d
+COPY ./default.conf /etc/nginx/conf.d/deafult.conf
+
+USER root
+
+RUN mkdir -p /vol/static
+RUN chmod 755 /vol/static
+
+USER nginx
