@@ -13,7 +13,7 @@ COPY . /app
 WORKDIR /app
 COPY ./scripts /scripts
 
-RUN shmod +x /scripts/*
+RUN chmod +x /scripts/*
 
 RUN mkdir -p /media
 RUN mkdir -p /staticfiles
