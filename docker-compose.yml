@@ -12,16 +12,6 @@ services:
       - "8000:8000"
     networks: 
       - main
-  nginx:
-    build: ./nginx
-    volumes: 
-      - static_data:/vol/static
-    ports: 
-      - "8080:8080"
-    depends_on: 
-      - django_gunicorn
-    networks: 
-      - main
 
 volumes: 
   static_data:
